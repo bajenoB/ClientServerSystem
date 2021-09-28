@@ -20,14 +20,15 @@ namespace ServerProject
 
             {
                 Task.Factory.StartNew(() => server.Connects());
+                
 
                 while (true)
                 {
 
-                    Console.WriteLine("Enter a path");
-                    server.SendMsg(Console.ReadLine());
+                    
+                    server.Menu();
 
-                    //server.GetMsg();
+                    
                     
                 }
             }
